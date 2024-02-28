@@ -11,6 +11,19 @@ export const CHANNELS = {
   plnChannel: {
     id: "VGF4Q29uZmlndXJhdGlvbjox",
   },
+  e2eChannelDoNotDelete: {
+    id: "Q2hhbm5lbDoyMzk0",
+    name: "e2e-channel-do-not-delete",
+    slug: "e2e-channel-do-not-delete",
+  },
+  channelUSD: {
+    id: "Q2hhbm5lbDoyMjQz",
+    name: "Channel-USD",
+  },
+  channelPLN: {
+    id: "Q2hhbm5lbDoyMjQ0",
+    name: "Channel-PLN",
+  },
 };
 export const CATEGORIES = {
   categoryToBeUpdated: {
@@ -319,7 +332,24 @@ export const WAREHOUSES = {
   warehouseToBeDeleted: {
     name: "warehouseto be deleted",
   },
+  warehouseEurope: {
+    id: "V2FyZWhvdXNlOjlkYjY4NWQxLWViMTktNDU2ZS05ODMyLTMxODA3ZWM0NDdhOQ==",
+    name: "Europe",
+  },
+  warehouseAmericas: {
+    id: "V2FyZWhvdXNlOjdmZDA0OGI0LWYwNzItNDZmMi1iMDMyLTc3ZWU3MDNiMzM3Yg==",
+    name: "Americas",
+  },
+  warehouseOceania: {
+    id: "V2FyZWhvdXNlOjc4OGUyMGRlLTlmYTAtNDI5My1iZDk2LWUwM2RjY2RhMzc0ZQ==",
+    name: "Oceania",
+  },
+  warehouseAfrica: {
+    id: "V2FyZWhvdXNlOjk1NWY0ZDk2LWRmNTAtNGY0Zi1hOTM4LWM5MTYzYTA4YTViNg==",
+    name: "Africa",
+  },
 };
+
 export const VOUCHERS_AND_DISCOUNTS = {
   vouchers: {
     voucherToBeEditedWithFreeShipping: {
