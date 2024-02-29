@@ -4,6 +4,18 @@ export const CHANNELS = {
   },
   channelToBeDeleted: {
     name: "z - channel to be deleted",
+
+export const CUSTOMER_ADDRESS = {
+  changeBillingAddress: {
+    firstName: "Change Billing Address",
+    lastName: "Automation",
+    companyName: "Saleor",
+    phone: "123456789",
+    addressLine1: "Teczowa",
+    addressLine2: "7",
+    cityName: "WROCLAW",
+    zip: "53-601",
+    country: "Poland",
   },
   channelForTaxEdition: {
     name: "a channel for tax tests",
@@ -126,6 +138,22 @@ export const CUSTOMER_ADDRESS = {
     name: "Channel-PLN",
   },
 };
+export const DISCOUNTS = {
+  promotionToBeEdited: {
+    name: "e2e promotion to be edited",
+    type: "Catalog",
+    id: "UHJvbW90aW9uOjI0MGVkZGVkLWYzMTAtNGUzZi1iNTlmLTFlMGFkYWE2ZWFkYg=="
+},
+promotionWithoutRulesToBeDeleted: {
+  id: "UHJvbW90aW9uOjRmNTQwMDc1LTZlZGMtNDI1NC1hY2U2LTQ2MzdlMGYxZWJhOA==",
+  name: "e2e Order predicate promotion without rules",
+  type: "Order",
+
+},
+promotionWithRulesToBeDeleted: {
+  name: "e2e Catalog predicate promotion with rules",
+  id: "UHJvbW90aW9uOjY0N2M2MzdhLTZjNTEtNDYxZC05MjQ2LTc0YTY0OGM0ZjAxNA==",
+}}
 export const GIFT_CARDS = {
   giftCardToBeEdited: {
     id: "R2lmdENhcmQ6NTM%3D",
@@ -350,7 +378,7 @@ export const WAREHOUSES = {
   },
 };
 
-export const VOUCHERS_AND_DISCOUNTS = {
+export const VOUCHERS = {
   vouchers: {
     voucherToBeEditedWithFreeShipping: {
       id: "Vm91Y2hlcjoyMDI%3D",

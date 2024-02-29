@@ -31,9 +31,7 @@ test("TC: SALEOR_28 Create basic order @e2e @order", async () => {
   await ordersPage.clickAddShippingCarrierButton();
   await ordersPage.shippingAddressDialog.pickAndConfirmFirstShippingMethod();
   await ordersPage.clickFinalizeButton();
-  await ordersPage.successBanner
-    .filter({ hasText: "finalized" })
-    .waitFor({ state: "visible" });
+  await expect(ordersPage.successBanner.getByText("finalized")).toBeVisible({timeout:60000})
 });
 test("TC: SALEOR_76 Create order with transaction flow activated @e2e @order", async () => {
   await ordersPage.goToOrdersListView();
@@ -54,7 +52,7 @@ test("TC: SALEOR_76 Create order with transaction flow activated @e2e @order", a
   await ordersPage.shippingAddressDialog.pickAndConfirmFirstShippingMethod();
   await ordersPage.clickFinalizeButton();
   await ordersPage.successBanner
-    .filter({ hasText: "finalized" })
+    .getByText("finalized")
     .waitFor({ state: "visible" });
   await expect(ordersPage.markAsPaidButton).toBeVisible();
   await expect(ordersPage.paymentSummarySection).toBeVisible();
