@@ -4,18 +4,6 @@ export const CHANNELS = {
   },
   channelToBeDeleted: {
     name: "z - channel to be deleted",
-
-export const CUSTOMER_ADDRESS = {
-  changeBillingAddress: {
-    firstName: "Change Billing Address",
-    lastName: "Automation",
-    companyName: "Saleor",
-    phone: "123456789",
-    addressLine1: "Teczowa",
-    addressLine2: "7",
-    cityName: "WROCLAW",
-    zip: "53-601",
-    country: "Poland",
   },
   channelForTaxEdition: {
     name: "a channel for tax tests",
