@@ -25,6 +25,7 @@ export const CHANNELS = {
     name: "Channel-PLN",
   },
 };
+
 export const CATEGORIES = {
   categoryToBeUpdated: {
     id: "Q2F0ZWdvcnk6NTA3",
@@ -130,18 +131,18 @@ export const DISCOUNTS = {
   promotionToBeEdited: {
     name: "e2e promotion to be edited",
     type: "Catalog",
-    id: "UHJvbW90aW9uOjI0MGVkZGVkLWYzMTAtNGUzZi1iNTlmLTFlMGFkYWE2ZWFkYg=="
-},
-promotionWithoutRulesToBeDeleted: {
-  id: "UHJvbW90aW9uOjRmNTQwMDc1LTZlZGMtNDI1NC1hY2U2LTQ2MzdlMGYxZWJhOA==",
-  name: "e2e Order predicate promotion without rules",
-  type: "Order",
-
-},
-promotionWithRulesToBeDeleted: {
-  name: "e2e Catalog predicate promotion with rules",
-  id: "UHJvbW90aW9uOjY0N2M2MzdhLTZjNTEtNDYxZC05MjQ2LTc0YTY0OGM0ZjAxNA==",
-}}
+    id: "UHJvbW90aW9uOjI0MGVkZGVkLWYzMTAtNGUzZi1iNTlmLTFlMGFkYWE2ZWFkYg==",
+  },
+  promotionWithoutRulesToBeDeleted: {
+    id: "UHJvbW90aW9uOjRmNTQwMDc1LTZlZGMtNDI1NC1hY2U2LTQ2MzdlMGYxZWJhOA==",
+    name: "e2e Order predicate promotion without rules",
+    type: "Order",
+  },
+  promotionWithRulesToBeDeleted: {
+    name: "e2e Catalog predicate promotion with rules",
+    id: "UHJvbW90aW9uOjY0N2M2MzdhLTZjNTEtNDYxZC05MjQ2LTc0YTY0OGM0ZjAxNA==",
+  },
+};
 export const GIFT_CARDS = {
   giftCardToBeEdited: {
     id: "R2lmdENhcmQ6NTM%3D",
