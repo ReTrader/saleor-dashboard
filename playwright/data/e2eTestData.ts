@@ -63,9 +63,11 @@ export const COUNTRIES = {
 export const CUSTOMERS = {
   deleteCustomer: {
     id: "VXNlcjo5MTA=",
+    email: "karen.davis@example.com",
   },
   editCustomer: {
     id: "VXNlcjo0Mjg=",
+    email: "jennifer.morgan@example.com",
   },
 };
 export const CUSTOMER_ADDRESS = {

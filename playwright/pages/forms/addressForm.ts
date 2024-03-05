@@ -14,6 +14,7 @@ export type customerAddress = {
 };
 
 export class AddressForm {
+  page: Page;
   
   constructor(
     page: Page,
@@ -45,7 +46,7 @@ export class AddressForm {
     readonly selectOptions = page.getByTestId(
       "single-autocomplete-select-option",
     ),
-  ) {}
+  ) {this.page = page}
 
   async clickCountrySelect() {
     await this.countrySelect.click();
@@ -85,7 +86,9 @@ export class AddressForm {
     await this.typeCity(customerInfo.cityName);
     await this.typeZip(customerInfo.zip);
     await this.clickCountrySelect();
+    await this.selectOptions.first().waitFor({state:"visible"});
+    await this.countrySelect.locator("input").clear()
     await this.countrySelect.locator("input").fill(customerInfo.country);
-    await this.selectOptions.filter({ hasText: customerInfo.country }).click();
+    await this.selectOptions.getByText(customerInfo.country).click();
   }
 }

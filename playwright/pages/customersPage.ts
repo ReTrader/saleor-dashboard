@@ -5,12 +5,14 @@ import { BasePage } from "@pages/basePage";
 import { DeleteDialog } from "@dialogs/deleteDialog";
 import { IssueGiftCardDialog } from "@dialogs/issueGiftCardDialog";
 import { AddressDialog } from "@dialogs/addressDialog";
+import { AddressesListPage } from "@pages/addressesListPage";
 
 export class CustomersPage extends BasePage {
   readonly addressForm: AddressForm;
   readonly deleteDialog: DeleteDialog;
   readonly issueGiftCardDialog: IssueGiftCardDialog;
   readonly addressDialog: AddressDialog;
+  readonly addressesListPage: AddressesListPage;
 
   constructor(
     page: Page,
@@ -33,22 +35,25 @@ export class CustomersPage extends BasePage {
     readonly menageAddressButton = page.getByTestId("manage-addresses"),
     readonly showMoreMenuButton = page.getByTestId("show-more-button"),
     readonly editAddressButton = page.getByTestId("edit-address"),
+    readonly emailPageTitleText = page.getByTestId("user-email-title"),
   ) {
     super(page);
     this.addressForm = new AddressForm(page);
     this.deleteDialog = new DeleteDialog(page);
     this.issueGiftCardDialog = new IssueGiftCardDialog(page);
     this.addressDialog = new AddressDialog(page);
+    this.addressesListPage = new AddressesListPage(page)
   }
 
   async goToCustomersListView() {
     await this.page.goto(URL_LIST.customers);
   }
-  async gotoCustomerDetailsPage(customerId: string) {
+  async gotoCustomerDetailsPage(customerId: string, email: string) {
     const existingCustomerUrl = `${URL_LIST.customers}${customerId}`;
     console.info(`Navigating to existing customer: ${existingCustomerUrl}`);
     await this.page.goto(existingCustomerUrl);
     await expect(this.pageHeader).toBeVisible({ timeout: 10000 });
+    await this.page.getByText(email).waitFor({ state: "visible" });
   }
   async clickOnCreateCustomer() {
     await this.createCustomerButton.click();
