@@ -2,7 +2,7 @@ import { GIFT_CARDS } from "@data/e2eTestData";
 import { GiftCardsPage } from "@pages/giftCardsPage";
 import { expect, test } from "@playwright/test";
 
-test.use({ storageState: "playwright/.auth/admin.json" });
+test.use({ storageState: "./playwright/.auth/admin.json" });
 let giftCardsPage: GiftCardsPage;
 test.beforeEach(({ page }) => {
   giftCardsPage = new GiftCardsPage(page);
