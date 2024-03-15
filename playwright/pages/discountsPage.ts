@@ -27,15 +27,18 @@ export class DiscountsPage extends BasePage {
     readonly addRuleButton = page.getByTestId("add-rule"),
     readonly editRuleButton = page.getByTestId("rule-edit-button"),
     readonly deleteRuleButton = page.getByTestId("rule-delete-button"),
+    readonly ruleName = page.getByTestId("rule-name"),
     readonly addRuleDialog = page.getByTestId("add-rule-dialog"),
     readonly ruleSection = page.getByTestId("rule-list"),
     readonly existingRule = ruleSection.getByTestId("added-rule"),
-
+    readonly ruleLabelWithActions = page.getByTestId("rule-label-with-actions"),
+    readonly ruleSummaryChip = page.getByTestId("rule-summary-chip"),
+    readonly ruleValueChip = page.getByTestId("rule-value-chip"),
   ) {
     super(page)
     this.deleteDialog = new DeleteDiscountDialog(page);
     this.promotionRuleDialog = new PromotionRuleDialog(page);
-}
+  }
   async clickCreateDiscountButton() {
     await this.createDiscountButton.click();
   }
@@ -94,13 +97,16 @@ export class DiscountsPage extends BasePage {
   }
 
   async clickAddRuleButton() {
-    await this.page.getByTestId('add-rule').click();}
+    await this.page.getByTestId('add-rule').click();
+  }
 
-  async clickEditRuleButton(){
-    await this.page.getByTestId('rule-edit-button').click();}
+  async clickEditRuleButton(rule: string) {
+    await this.existingRule.locator(this.ruleLabelWithActions).filter({ hasText: rule }).locator(this.editRuleButton).click();
+  }
 
-  async clickDeleteRuleButton() {
-    await this.deleteRuleButton.click() }
+  async clickDeleteRuleButton(rule: string) {
+    await this.existingRule.locator(this.ruleLabelWithActions).filter({ hasText: rule }).locator(this.deleteRuleButton).click();
+  }
 
   async openPromotionRuleModal() {
     await this.addRuleButton.click();
