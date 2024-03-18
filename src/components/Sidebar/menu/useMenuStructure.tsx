@@ -16,7 +16,6 @@ import { PermissionEnum } from "@dashboard/graphql";
 import { commonMessages, sectionNames } from "@dashboard/intl";
 import { orderDraftListUrl, orderListUrl } from "@dashboard/orders/urls";
 import { pageListPath } from "@dashboard/pages/urls";
-import { productListUrl } from "@dashboard/products/urls";
 import { languageListUrl } from "@dashboard/translations/urls";
 import {
   ConfigurationIcon,
@@ -99,7 +98,6 @@ export function useMenuStructure() {
         ),
       ],
       icon: <ProductsIcons {...iconSettings} />,
-      url: productListUrl(),
       label: intl.formatMessage(commonMessages.products),
       permissions: [
         PermissionEnum.MANAGE_GIFT_CARD,

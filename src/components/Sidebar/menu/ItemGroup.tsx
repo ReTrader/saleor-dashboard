@@ -33,14 +33,29 @@ export const ItemGroup: React.FC<Props> = ({ menuItem }) => {
         justifyContent="space-between"
         data-test-id={`menu-item-label-${menuItem.id}`}
       >
-        <Link
-          replace={isActive}
-          to={menuItem?.url ?? ""}
-          className={sprinkles({
-            width: "100%",
-            display: "block",
-          })}
-        >
+        {menuItem.url ? (
+          <Link
+            replace={isActive}
+            to={menuItem?.url ?? ""}
+            className={sprinkles({
+              width: "100%",
+              display: "block",
+            })}
+          >
+            <Box
+              display="flex"
+              alignItems="center"
+              gap={3}
+              paddingY={1.5}
+              borderRadius={3}
+            >
+              {menuItem.icon}
+              <Text size="small" variant="bodyEmp">
+                {menuItem.label}
+              </Text>
+            </Box>
+          </Link>
+        ) : (
           <Box
             display="flex"
             alignItems="center"
@@ -53,7 +68,7 @@ export const ItemGroup: React.FC<Props> = ({ menuItem }) => {
               {menuItem.label}
             </Text>
           </Box>
-        </Link>
+        )}
       </List.ItemGroup.Trigger>
       <List.ItemGroup.Content>
         <Box

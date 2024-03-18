@@ -49,8 +49,11 @@ import { productImageUrl, productListUrl } from "@dashboard/products/urls";
 import { ProductVariantListError } from "@dashboard/products/views/ProductUpdate/handlers/errors";
 import { UseProductUpdateHandlerError } from "@dashboard/products/views/ProductUpdate/handlers/useProductUpdateHandler";
 import { FetchMoreProps, RelayToFlat } from "@dashboard/types";
+import { Box } from "@material-ui/core";
+import { ArrowLeftIcon, Button } from "@saleor/macaw-ui/next";
 import React from "react";
 import { useIntl } from "react-intl";
+import useRouter from "use-react-router";
 
 import { getChoices } from "../../utils/data";
 import { ProductDetailsForm } from "../ProductDetailsForm";
@@ -168,6 +171,7 @@ export const ProductUpdatePage: React.FC<ProductUpdatePageProps> = ({
   onCloseDialog,
   onAttributeSelectBlur,
 }) => {
+  const router = useRouter();
   const intl = useIntl();
   const navigate = useNavigator();
   const [channelPickerOpen, setChannelPickerOpen] = React.useState(false);
@@ -322,7 +326,19 @@ export const ProductUpdatePage: React.FC<ProductUpdatePageProps> = ({
 
         return (
           <DetailPageLayout>
-            <TopNav href={productListUrl()} title={header}>
+            <TopNav
+              title={
+                <Box display="flex" alignItems="center" gridGap={8}>
+                  <Button
+                    icon={<ArrowLeftIcon />}
+                    variant="secondary"
+                    size="large"
+                    onClick={router.history.goBack}
+                  />
+                  <div>{header}</div>
+                </Box>
+              }
+            >
               <TopNav.Menu
                 items={[
                   ...extensionMenuItems,
