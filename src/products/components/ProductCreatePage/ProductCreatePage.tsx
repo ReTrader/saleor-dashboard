@@ -39,8 +39,11 @@ import {
   productListUrl,
 } from "@dashboard/products/urls";
 import { getChoices } from "@dashboard/products/utils/data";
+import { Box } from "@material-ui/core";
+import { ArrowLeftIcon, Button } from "@saleor/macaw-ui/next";
 import React from "react";
 import { useIntl } from "react-intl";
+import useRouter from "use-react-router";
 
 import { FetchMoreProps, RelayToFlat } from "../../../types";
 import { ProductDetailsForm } from "../ProductDetailsForm";
@@ -141,6 +144,7 @@ export const ProductCreatePage: React.FC<ProductCreatePageProps> = ({
   onAttributeSelectBlur,
 }: ProductCreatePageProps) => {
   const intl = useIntl();
+  const router = useRouter();
   const navigate = useNavigator();
 
   const closeDialog = () => {
@@ -235,7 +239,19 @@ export const ProductCreatePage: React.FC<ProductCreatePageProps> = ({
         );
         return (
           <DetailPageLayout>
-            <TopNav href={productListUrl()} title={header} />
+            <TopNav
+              title={
+                <Box display="flex" alignItems="center" gridGap={8}>
+                  <Button
+                    icon={<ArrowLeftIcon />}
+                    variant="secondary"
+                    size="large"
+                    onClick={router.history.goBack}
+                  />
+                  <div>{header}</div>
+                </Box>
+              }
+            />
             <DetailPageLayout.Content>
               <ProductDetailsForm
                 data={data}
