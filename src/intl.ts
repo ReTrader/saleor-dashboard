@@ -215,6 +215,10 @@ export const commonMessages = defineMessages({
     defaultMessage: "Product",
     id: "x/ZVlU",
   },
+  catalog: {
+    defaultMessage: "Catalog",
+    id: "GOdq5V",
+  },
 });
 
 export const errorMessages = defineMessages({

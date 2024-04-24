@@ -2556,6 +2556,9 @@
     "context": "webhooks inactive label",
     "string": "Inactive"
   },
+  "GOdq5V": {
+    "string": "Catalog"
+  },
   "GVM/fi": {
     "context": "order history message",
     "string": "Payment was authorized"

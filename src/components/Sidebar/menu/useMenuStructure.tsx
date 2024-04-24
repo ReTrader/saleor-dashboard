@@ -98,7 +98,7 @@ export function useMenuStructure() {
         ),
       ],
       icon: <ProductsIcons {...iconSettings} />,
-      label: intl.formatMessage(commonMessages.products),
+      label: intl.formatMessage(commonMessages.catalog),
       permissions: [
         PermissionEnum.MANAGE_GIFT_CARD,
         PermissionEnum.MANAGE_PRODUCTS,
