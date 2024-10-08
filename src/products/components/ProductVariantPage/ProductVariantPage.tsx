@@ -32,6 +32,8 @@ import { VariantDetailsChannelsAvailabilityCard } from "@dashboard/products/comp
 import { productUrl } from "@dashboard/products/urls";
 import { getSelectedMedia } from "@dashboard/products/utils/data";
 import { FetchMoreProps, RelayToFlat, ReorderAction } from "@dashboard/types";
+import { Box } from "@material-ui/core";
+import { ArrowLeftIcon, Button } from "@saleor/macaw-ui/next";
 import React from "react";
 import { defineMessages, useIntl } from "react-intl";
 
@@ -197,7 +199,19 @@ const ProductVariantPage: React.FC<ProductVariantPageProps> = ({
 
   return (
     <DetailPageLayout gridTemplateColumns={1}>
-      <TopNav href={productUrl(productId)} title={header}>
+      <TopNav
+        title={
+          <Box display="flex" alignItems="center" gridGap={8}>
+            <Button
+              icon={<ArrowLeftIcon />}
+              variant="secondary"
+              size="large"
+              onClick={() => history.back()}
+            />
+            <div>{header}</div>
+          </Box>
+        }
+      >
         {variant?.product?.defaultVariant?.id !== variant?.id && (
           <ProductVariantSetDefault onSetDefaultVariant={onSetDefaultVariant} />
         )}

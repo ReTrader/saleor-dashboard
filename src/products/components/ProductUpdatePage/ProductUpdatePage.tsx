@@ -48,7 +48,8 @@ import { productImageUrl, productListUrl } from "@dashboard/products/urls";
 import { ProductVariantListError } from "@dashboard/products/views/ProductUpdate/handlers/errors";
 import { UseProductUpdateHandlerError } from "@dashboard/products/views/ProductUpdate/handlers/useProductUpdateHandler";
 import { FetchMoreProps, RelayToFlat } from "@dashboard/types";
-import { Box } from "@saleor/macaw-ui/next";
+import { Box as MuiBox } from "@material-ui/core";
+import { ArrowLeftIcon, Box, Button } from "@saleor/macaw-ui/next";
 import React from "react";
 import { useIntl } from "react-intl";
 
@@ -319,7 +320,19 @@ export const ProductUpdatePage: React.FC<ProductUpdatePageProps> = ({
 
         return (
           <DetailPageLayout>
-            <TopNav href={productListUrl()} title={header}>
+            <TopNav
+              title={
+                <MuiBox display="flex" alignItems="center" gridGap={8}>
+                  <Button
+                    icon={<ArrowLeftIcon />}
+                    variant="secondary"
+                    size="large"
+                    onClick={() => history.back()}
+                  />
+                  <div>{header}</div>
+                </MuiBox>
+              }
+            >
               <TopNav.Menu
                 items={[
                   ...extensionMenuItems,

@@ -10,9 +10,9 @@ import { ProductMediaType } from "@dashboard/graphql";
 import useNavigator from "@dashboard/hooks/useNavigator";
 import { commonMessages } from "@dashboard/intl";
 import { productUrl } from "@dashboard/products/urls";
-import { Card, CardContent, TextField } from "@material-ui/core";
+import { Box, Card, CardContent, TextField } from "@material-ui/core";
 import { makeStyles } from "@saleor/macaw-ui";
-import { vars } from "@saleor/macaw-ui/next";
+import { ArrowLeftIcon, Button, vars } from "@saleor/macaw-ui/next";
 import React from "react";
 import { defineMessages, useIntl } from "react-intl";
 
@@ -109,8 +109,17 @@ const ProductMediaPage: React.FC<ProductMediaPageProps> = props => {
       {({ change, data, submit }) => (
         <>
           <TopNav
-            href={productUrl(productId)}
-            title={intl.formatMessage(messages.editMedia)}
+            title={
+              <Box display="flex" alignItems="center" gridGap={8}>
+                <Button
+                  icon={<ArrowLeftIcon />}
+                  variant="secondary"
+                  size="large"
+                  onClick={() => history.back()}
+                />
+                <div>{intl.formatMessage(messages.editMedia)}</div>
+              </Box>
+            }
           />
           <Grid variant="inverted">
             <div>

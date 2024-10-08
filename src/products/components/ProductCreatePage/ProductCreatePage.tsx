@@ -37,7 +37,8 @@ import {
   productListUrl,
 } from "@dashboard/products/urls";
 import { getChoices } from "@dashboard/products/utils/data";
-import { Box, Option } from "@saleor/macaw-ui/next";
+import { Box as MuiBox } from "@material-ui/core";
+import { ArrowLeftIcon, Box, Button, Option } from "@saleor/macaw-ui/next";
 import React from "react";
 import { useIntl } from "react-intl";
 
@@ -233,7 +234,19 @@ export const ProductCreatePage: React.FC<ProductCreatePageProps> = ({
         );
         return (
           <DetailPageLayout>
-            <TopNav href={productListUrl()} title={header} />
+            <TopNav
+              title={
+                <MuiBox display="flex" alignItems="center" gridGap={8}>
+                  <Button
+                    icon={<ArrowLeftIcon />}
+                    variant="secondary"
+                    size="large"
+                    onClick={() => history.back()}
+                  />
+                  <div>{header}</div>
+                </MuiBox>
+              }
+            />
             <DetailPageLayout.Content>
               <ProductDetailsForm
                 data={data}
