@@ -1,5 +1,23 @@
 # Changelog
 
+## 3.17.3
+
+### Patch Changes
+
+- f34a2338e: An error is no longer raised and visible to the user when saving translations
+- d9bd91961: Fix error related to can not read property of undefined in metadata and reading search page info
+- 621b3ec96: An error is no longer raised and visible to the user when saving credential is not supported
+
+## 3.17.2
+
+### Patch Changes
+
+- 32eec2827: Update tests-nightly.yml - our e2e suite was skipped. Had to change chrome to electron in condition to trigger suite
+- 455349321: Add manual workflow for cypress tests
+- 94b0af2d4: Run cypress or playwright tests on release
+- fecbcb525: Dashboard no longer crashes when assigning reference attribute while creating content.
+- 5025ac306: Change e2e default browser to electron
+
 ## 3.17.1
 
 ### Patch Changes
